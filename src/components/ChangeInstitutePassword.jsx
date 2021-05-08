@@ -55,7 +55,7 @@ class ChangeInstitutePassword extends Component {
                     password: this.state.newPassword
                 }
                 InstituteService.editInstitute(this.state.institute.userId, institute).then(() => {
-                    alert("password changed successfully");
+                    alert("You have changed your password successfully");
                     this.props.history.push(`/instituteWelcomePage/${this.state.institute.userId}`);
                 });
             }
