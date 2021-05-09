@@ -36,7 +36,7 @@ class ViewStateScholarships extends Component {
             <div className="row">
                 <div className="card">
                     <div className="card-header bg-primary text-center">
-                          <h3>Review Scholarships</h3>
+                          <h3>View {this.state.state} Scholarships</h3>
                     </div>
                     <br></br>
                     <div>

@@ -38,7 +38,7 @@ class ViewAllScholarships extends Component {
                 <div className="container-fluid">
                     <div className="card-header bg-primary text-center">
          
-                          <h3>Reviewed Scholarships</h3>
+                          <h3>View All Scholarships</h3>
                     </div>
                     <br></br>
                     <div>

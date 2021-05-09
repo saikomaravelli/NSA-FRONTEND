@@ -35,7 +35,7 @@ class ViewStateInstitutes extends Component {
             <div className="row">
                 <div className="card">
                     <div className="card-header bg-primary text-center">
-                          <h3>Review Institutes</h3>
+                          <h3>View {this.state.state} Institutes</h3>
                     </div>
                     <br></br>
                     <div>

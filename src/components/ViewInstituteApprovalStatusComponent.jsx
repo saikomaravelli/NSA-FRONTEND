@@ -28,7 +28,9 @@ class ViewInstituteApprovalStatus extends Component {
         <div className=" card container">
           <table>
             <tr>
-          <td><h2 className="text-center" style={{ color: '#1fdee3' }}>Your institution status is {this.state.approvalMessage}</h2></td>
+          <td>{this.state.approvalMessage === 'Pending'?(<h2 className="text-center" style={{ color: 'orange' }}>Your institution status is {this.state.approvalMessage}</h2>):
+            (<h2 className="text-center" style={{ color: 'green' }}>Your institution status is {this.state.approvalMessage}</h2>)}
+            </td>
           {/* <td><button >X</button></td> */}
           </tr>
           </table>

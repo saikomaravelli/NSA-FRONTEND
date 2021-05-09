@@ -178,6 +178,7 @@ class CreateScholarship extends Component {
        
             ScholarshipService.createScholarship(scholarship).then(res =>{
                 console.log("scholarsip added sucessfully");
+                alert("You have successfully applied for scholarship");
                 this.props.history.push(`/StudentHomePage/${this.state.userId}`);
                 
             }
