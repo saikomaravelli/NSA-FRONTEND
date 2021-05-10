@@ -95,7 +95,7 @@ class ChangeInstitutePassword extends Component {
                             <br />
                             <tr>
                                 <td><label htmlFor="oldPassword">CURRENT PASSWORD</label></td>
-                                <td><input type="password" id="oldPassword" className="form-control" onChange={this.changeOldPasswordHandler} value={this.state.oldPassword} /></td>
+                                <td><input type="password" id="oldPassword" placeholder="Enter your current password" className="form-control" onChange={this.changeOldPasswordHandler} value={this.state.oldPassword} /></td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -103,7 +103,7 @@ class ChangeInstitutePassword extends Component {
 
                             <tr>
                                 <td><label htmlFor="newPassword">NEW PASSWORD</label></td>
-                                <td><input type="password" id="newPassword" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{3,15}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 3 or more characters" className="form-control" onChange={this.changeNewPasswordHandler} value={this.state.newPassword} /></td>
+                                <td><input type="password" id="newPassword" placeholder="Enter a new Password" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{3,15}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 3 or more characters" className="form-control" onChange={this.changeNewPasswordHandler} value={this.state.newPassword} /></td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -112,7 +112,7 @@ class ChangeInstitutePassword extends Component {
 
                             <tr>
                                 <td><label htmlFor="confirmNewPassword">CONFIRM NEW PASSWORD</label></td>
-                                <td><input type="password" id="confirmNewPassword" className="form-control" onChange={this.changeConfirmNewPasswordHandler} value={this.state.confirmNewPassword} /></td>
+                                <td><input type="password" id="confirmNewPassword" placeholder="Re-enter new password" className="form-control" onChange={this.changeConfirmNewPasswordHandler} value={this.state.confirmNewPassword} /></td>
                             </tr>
 
 
