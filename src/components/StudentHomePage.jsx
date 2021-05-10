@@ -27,13 +27,13 @@ class StudentHomePage extends Component {
     ViewProfile = (e) => {
         this.props.history.push(`/viewstudentprofile/${this.state.uid}`);
     }
-    applyScholarship = ()=>{
+    applyScholarship = () => {
         this.props.history.push(`/createscholarship/${this.state.uid}`);
     }
-    viewStudentScholarship= ()=>{
+    viewStudentScholarship = () => {
         this.props.history.push(`/viewStudentScholarship/${this.state.uid}`);
     }
-    changePassword=(e)=>{
+    changePassword = (e) => {
         this.props.history.push(`/changepassword/${this.state.uid}`);
     }
     render() {
@@ -45,25 +45,25 @@ class StudentHomePage extends Component {
                 </div>
                 <div className="text-center">
                     <div style={{ border: 'none' }} className="card col-md-8 mx-auto table-borderless">
-                        
-                            
-                                <button className="btn btn-outline-primary mr-5" onClick={this.ViewProfile}>View Profile</button>
-                          
-                            <br></br>
-                            
-                                <button className="btn btn-outline-primary mr-5" onClick={this.UpdateDetails}>Update Details</button>
-                            <br></br>
-                            
-                                <button className="btn btn-outline-primary mr-5" onClick={this.changePassword}>Change Password</button>
-                            <br></br>
-                            
-                                <button className="btn btn-outline-primary mr-5" onClick={this.applyScholarship} >Apply Scholarship</button>
-                            
-                            <br></br>
-                           
-                                <button className="btn btn-outline-primary mr-5" onClick={this.viewStudentScholarship}>View Scholarship Status</button>
-                            
-                        
+
+
+                        <button className="btn btn-outline-primary mr-5" onClick={this.ViewProfile}>View Profile</button>
+
+                        <br></br>
+
+                        <button className="btn btn-outline-primary mr-5" onClick={this.UpdateDetails}>Update Details</button>
+                        <br></br>
+
+                        <button className="btn btn-outline-primary mr-5" onClick={this.changePassword}>Change Password</button>
+                        <br></br>
+
+                        <button className="btn btn-outline-primary mr-5" onClick={this.applyScholarship} >Apply Scholarship</button>
+
+                        <br></br>
+
+                        <button className="btn btn-outline-primary mr-5" onClick={this.viewStudentScholarship}>View Scholarship Status</button>
+
+
                     </div>
                 </div>
             </div>

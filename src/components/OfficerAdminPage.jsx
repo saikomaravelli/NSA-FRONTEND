@@ -7,49 +7,42 @@ class OfficerAdminPage extends Component {
         super(props);
         this.state = {
 
-            pvalue:'_add',
+            pvalue: '_add',
             // state:'all',
-            state: this.props.match.params.state,    
-            officer:''
+            state: this.props.match.params.state,
+            officer: ''
 
-            
+
 
         }
-        this.addofficer=this.addofficer.bind(this);
-        this.viewOfficerProfile=this.viewOfficerProfile.bind(this);
-        this.updateofficer=this.updateofficer.bind(this);
-        this.logout=this.logout.bind(this);
-        this.changeOfficerPassword=this.changeOfficerPassword.bind(this);
+        this.addofficer = this.addofficer.bind(this);
+        this.viewOfficerProfile = this.viewOfficerProfile.bind(this);
+        this.updateofficer = this.updateofficer.bind(this);
+        this.logout = this.logout.bind(this);
+        this.changeOfficerPassword = this.changeOfficerPassword.bind(this);
     }
-    componentDidMount()
-    {
-        OfficerService.getOfficerByState(this.state.state).then(res=>
-            {
-                this.setState({officer:res.data})                       
-            });
+    componentDidMount() {
+        OfficerService.getOfficerByState(this.state.state).then(res => {
+            this.setState({ officer: res.data })
+        });
     }
 
-    viewOfficerProfile()
-    {
+    viewOfficerProfile() {
         this.props.history.push(`/viewOfficerProfile/${this.state.state}`)      //directs to profile page
     }
 
-    updateofficer()
-    {
+    updateofficer() {
         this.props.history.push(`/officerAdminUpdate/${this.state.state}`)
     }
 
-    changeOfficerPassword()
-    {
+    changeOfficerPassword() {
         this.props.history.push(`/changeOfficerPassword/${this.state.state}`)
     }
-    addofficer()
-    {
+    addofficer() {
         this.props.history.push(`/officerRegistrationPage/${this.state.pvalue}`)
     }
 
-    logout()
-    {
+    logout() {
         this.props.history.push('/login')               //redirects to login page
     }
 
@@ -62,22 +55,22 @@ class OfficerAdminPage extends Component {
 
                     <button className="btn btn-outline-danger" onClick={this.logout}>
                         Logout</button>
-                        </div>
+                </div>
                 <div style={{ border: 'none' }} className="card col-md-8 mx-auto table-borderless">
-                        <button className="btn btn-outline-primary mr-5" onClick={this.viewOfficerProfile} >
-                            View my Profile
+                    <button className="btn btn-outline-primary mr-5" onClick={this.viewOfficerProfile} >
+                        View my Profile
 
                          </button>
-                         <br></br>
-                         
-                        <button className="btn btn-outline-primary mr-5" onClick={this.changeOfficerPassword} >
-                            Change Password
+                    <br></br>
+
+                    <button className="btn btn-outline-primary mr-5" onClick={this.changeOfficerPassword} >
+                        Change Password
                         </button>
-                         <br></br>
-                        <button className="btn btn-outline-primary mr-5" onClick={this.addofficer}>
-                            Add Officer
+                    <br></br>
+                    <button className="btn btn-outline-primary mr-5" onClick={this.addofficer}>
+                        Add Officer
                         </button>
-                        
+
                 </div>
 
             </div>

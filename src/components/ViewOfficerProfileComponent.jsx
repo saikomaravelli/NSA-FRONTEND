@@ -2,42 +2,38 @@ import { Component } from "react";
 import OfficerService from "../services/OfficerService";
 
 class ViewOfficerProfileComponent extends Component {
-    constructor(props)
-    {
-        super(props);
-        this.state={
+  constructor(props) {
+    super(props);
+    this.state = {
 
-            state:this.props.match.params.state,
-            officer:''
+      state: this.props.match.params.state,
+      officer: ''
 
-        }
-         this.back=this.back.bind(this);
     }
+    this.back = this.back.bind(this);
+  }
 
-    componentDidMount()
-    {
-        OfficerService.getOfficerByState(this.state.state).then((res)=>
-        {
-            this.setState({officer:res.data})
-        });
-    }
+  componentDidMount() {
+    OfficerService.getOfficerByState(this.state.state).then((res) => {
+      this.setState({ officer: res.data })
+    });
+  }
 
-    back()
+  back() {
+    if (this.state.state == 'all')                                         //redirects to officeradmin home page
     {
-      if(this.state.state=='all')                                         //redirects to officeradmin home page
-      {
-        this.props.history.push(`/officerAdminPage/${this.state.state}`) 
-      }
-      else                                                                //redirects back to  officer page
-      {
-        this.props.history.push(`/officerWelcomePage/${this.state.state}`)
-      }
+      this.props.history.push(`/officerAdminPage/${this.state.state}`)
     }
-    
-    render() { 
-        return (
-            <div>
-                     <div style={{ backgroundColor: '#F2FEFF' }} className="card col-md-6 offset-md-3 offset-md-3 p-3 mb-2 text-dark">
+    else                                                                //redirects back to  officer page
+    {
+      this.props.history.push(`/officerWelcomePage/${this.state.state}`)
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <div style={{ backgroundColor: '#F2FEFF' }} className="card col-md-6 offset-md-3 offset-md-3 p-3 mb-2 text-dark">
           <h2 className="text-center">Your Profile:</h2>
 
           <br></br>
@@ -57,7 +53,7 @@ class ViewOfficerProfileComponent extends Component {
                     <th> State:</th>
                     <td> {this.state.officer.state}</td>
                   </tr>
-                 
+
                 </tr>
               </thead>
             </table>
@@ -68,9 +64,9 @@ class ViewOfficerProfileComponent extends Component {
             </div>
           </div>
         </div>
-            </div>
-        );
-    }
+      </div>
+    );
+  }
 }
- 
+
 export default ViewOfficerProfileComponent;

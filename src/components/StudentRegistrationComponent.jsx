@@ -21,93 +21,93 @@ class StudentRegistrationComponent extends Component {
             address: '',
             city: '',
             aadhar: '',
-            displayMessage:''
+            displayMessage: ''
         }
     }
     saveStudent = (e) => {
         e.preventDefault();
-        if(this.fieldsCheck()){
-        let student = { userId: this.state.userId, password: this.state.password, role: this.state.role, studentId: this.state.studentId, fullName: this.state.fullName, gender: this.state.gender, birthdate: this.state.birthdate, mobile: this.state.mobile, email: this.state.email, address: this.state.address, city: this.state.city, aadhar: this.state.aadhar };
+        if (this.fieldsCheck()) {
+            let student = { userId: this.state.userId, password: this.state.password, role: this.state.role, studentId: this.state.studentId, fullName: this.state.fullName, gender: this.state.gender, birthdate: this.state.birthdate, mobile: this.state.mobile, email: this.state.email, address: this.state.address, city: this.state.city, aadhar: this.state.aadhar };
 
-        console.log('student => ' + JSON.stringify(student));
-        StudentService.addStudent(student).then((resp) => {
-            console.log("Student registered sucessfully");
-            alert("Student Registered Successfully");
-            this.props.history.push('/login');
+            console.log('student => ' + JSON.stringify(student));
+            StudentService.addStudent(student).then((resp) => {
+                console.log("Student registered sucessfully");
+                alert("Student Registered Successfully");
+                this.props.history.push('/login');
+            }
+            );
         }
-        );
     }
-    }
-    back(){
+    back() {
         this.props.history.push('/login');
     }
-    fieldsCheck = ()=>{          
-        if(this.state.userId.length === 0){
+    fieldsCheck = () => {
+        if (this.state.userId.length === 0) {
             alert("userId field cannot be empty");
             document.getElementById("userId").focus();
             return false;
         }
-        else if(this.state.password.length === 0){
+        else if (this.state.password.length === 0) {
             alert("password field cannot be empty");
             document.getElementById("password").focus();
             return false;
         }
-        else if(this.state.confirmPassword.length === 0){
-             alert("confirm password field cannot be empty");
+        else if (this.state.confirmPassword.length === 0) {
+            alert("confirm password field cannot be empty");
             //  document.getElementById("confirmpassword").focus();
-             return false;
-         }
-        else if(this.state.studentId.length === 0){
+            return false;
+        }
+        else if (this.state.studentId.length === 0) {
             alert("StudentId field cannot be empty");
             document.getElementById("studentId").focus();
             return false;
         }
-        else if(this.state.fullName.length === 0){
+        else if (this.state.fullName.length === 0) {
             alert("fullName field cannot be empty");
             document.getElementById("fullName").focus();
             return false;
         }
-        else if(this.state.gender.length === 0){
+        else if (this.state.gender.length === 0) {
             alert("gender field cannot be empty");
             document.getElementById("gender").focus();
             return false;
         }
-        else if(this.state.birthdate.length === 0){
+        else if (this.state.birthdate.length === 0) {
             alert("birthdate field cannot be empty");
             document.getElementById("birthdate").focus();
             return false;
         }
-        else if(this.state.mobile.length === 0){
+        else if (this.state.mobile.length === 0) {
             alert("mobile field cannot be empty");
             document.getElementById("mobile").focus();
             return false;
         }
-        else if(this.state.email.length === 0){
+        else if (this.state.email.length === 0) {
             alert("email field cannot be empty");
             document.getElementById("email").focus();
             return false;
         }
-        else if(this.state.address.length === 0){
+        else if (this.state.address.length === 0) {
             alert("address field cannot be empty");
             document.getElementById("address").focus();
             return false;
         }
-        else if(this.state.city.length === 0){
+        else if (this.state.city.length === 0) {
             alert("city field cannot be empty");
             document.getElementById("city").focus();
             return false;
         }
-        else if(this.state.aadhar.length === 0){
+        else if (this.state.aadhar.length === 0) {
             alert("aadhar field cannot be empty");
             document.getElementById("aadhar").focus();
             return false;
         }
         return true;
     }
-    validatePassword = ()=>{                                            
-        if(this.state.password !== this.state.confirmPassword){
+    validatePassword = () => {
+        if (this.state.password !== this.state.confirmPassword) {
             alert("password doesn't match");
-            this.setState({confirmPassword : "",});
+            this.setState({ confirmPassword: "", });
         }
     }
     changeUidHandler = (event) => {
@@ -115,17 +115,17 @@ class StudentRegistrationComponent extends Component {
     }
     changePasswordHandler = (event) => {
         this.setState({ password: event.target.value });
-        if(!event.target.value){
-            this.setState({displayMessage:""});
+        if (!event.target.value) {
+            this.setState({ displayMessage: "" });
         }
-        else if(event.target.value.length <= 5){
-            this.setState({displayMessage:"weak password"});
+        else if (event.target.value.length <= 5) {
+            this.setState({ displayMessage: "weak password" });
         }
-        else if(event.target.value.length <= 8){
-            this.setState({displayMessage:"medium password"})
+        else if (event.target.value.length <= 8) {
+            this.setState({ displayMessage: "medium password" })
         }
-        else if(event.target.value.length <= 12){
-            this.setState({displayMessage:"strong password"})
+        else if (event.target.value.length <= 12) {
+            this.setState({ displayMessage: "strong password" })
         }
     }
     changeConfirmPasswordHandler = (event) => {
@@ -161,13 +161,13 @@ class StudentRegistrationComponent extends Component {
     changeAadharHandler = (event) => {
         this.setState({ aadhar: event.target.value });
     }
-    showPassword = (s)=>{
+    showPassword = (s) => {
         let f = document.getElementById(s);
-        if(f.type === "password"){
-            f.type="text"
+        if (f.type === "password") {
+            f.type = "text"
         }
-        else{
-            f.type="password"
+        else {
+            f.type = "password"
         }
     }
     render() {
@@ -191,36 +191,36 @@ class StudentRegistrationComponent extends Component {
                                             <td>Password:</td>
                                             <td><input type="password" id="password" placeholder="Enter new password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{3,15}" className="form-control" title="Must contain at least one number and one uppercase and lowercase letter and at least 8 or more characters" onChange={this.changePasswordHandler}></input></td>
                                             <td>
-                                                {this.state.displayMessage ==="weak password"?(<div style={{color:"red"}}>{this.state.displayMessage}</div>):null}
-                                                {this.state.displayMessage ==="medium password"?(<div style={{color:"orange"}}>{this.state.displayMessage}</div>):null}
-                                                {this.state.displayMessage ==="strong password"?(<div style={{color:"green"}}>{this.state.displayMessage}</div>):null}
+                                                {this.state.displayMessage === "weak password" ? (<div style={{ color: "red" }}>{this.state.displayMessage}</div>) : null}
+                                                {this.state.displayMessage === "medium password" ? (<div style={{ color: "orange" }}>{this.state.displayMessage}</div>) : null}
+                                                {this.state.displayMessage === "strong password" ? (<div style={{ color: "green" }}>{this.state.displayMessage}</div>) : null}
                                             </td>
                                         </tr>
                                         <tr>
-                                <td></td>
-                            <td><input type="checkbox" onClick={()=>this.showPassword("password")}/>show Password</td></tr>
+                                            <td></td>
+                                            <td><input type="checkbox" onClick={() => this.showPassword("password")} />show Password</td></tr>
                                         <tr>
                                             <td>Confirm Password:</td>
                                             <td>
                                                 <div className="input-group">
-                                                
-                                                    <input type="password" id="confirmpassword" placeholder="Re-enter the password" className="form-control" onBlur  ={this.validatePassword} onChange={this.changeConfirmPasswordHandler} value={this.state.confirmPassword} />
+
+                                                    <input type="password" id="confirmpassword" placeholder="Re-enter the password" className="form-control" onBlur={this.validatePassword} onChange={this.changeConfirmPasswordHandler} value={this.state.confirmPassword} />
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>Role:</td>
-                                            <td> <input type="text"  value={this.state.role} readOnly className="form-control" onChange={this.changeRoleHandler}></input></td>
+                                            <td> <input type="text" value={this.state.role} readOnly className="form-control" onChange={this.changeRoleHandler}></input></td>
                                         </tr>
                                         <tr>
                                             <td>StudentId:</td>
-                                            <td> <input type="text" id="studentId" placeholder="Enter StudentId" className="form-control"  onChange={this.changeStIdHandler}></input></td>
+                                            <td> <input type="text" id="studentId" placeholder="Enter StudentId" className="form-control" onChange={this.changeStIdHandler}></input></td>
                                         </tr>
                                         <tr>
                                             <td>Fullname:</td>
                                             <td> <input type="text" id="fullName" placeholder="Enter full name" className="form-control" pattern="[A-Za-z ]{2,30}" title="Must contain only characters and size should be between 2 to 30" onChange={this.changefullNameHandler}></input></td>
                                         </tr>
-                                         <tr>
+                                        <tr>
                                             <td>Gender:</td>
                                             <td><select id="gender" className="form-control" onChange={this.changeGenderHandler}>
                                                 <option>Select Gender</option>

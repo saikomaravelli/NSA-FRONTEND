@@ -28,11 +28,11 @@ class ViewInstituteApprovalStatus extends Component {
         <div className=" card container">
           <table>
             <tr>
-          <td>{this.state.approvalMessage === 'Pending'?(<h2 className="text-center" style={{ color: 'orange' }}>Your institution status is {this.state.approvalMessage}</h2>):
-            (<h2 className="text-center" style={{ color: 'green' }}>Your institution status is {this.state.approvalMessage}</h2>)}
-            </td>
-          
-          </tr>
+              <td>{this.state.approvalMessage === 'Pending' ? (<h2 className="text-center" style={{ color: 'orange' }}>Your institution status is {this.state.approvalMessage}</h2>) :
+                (<h2 className="text-center" style={{ color: 'green' }}>Your institution status is {this.state.approvalMessage}</h2>)}
+              </td>
+
+            </tr>
           </table>
         </div>
         <br />
@@ -45,8 +45,8 @@ class ViewInstituteApprovalStatus extends Component {
               <thead>
                 <tr key={this.state.institute.userId}>
                   <tr>
-                  <th> User ID:</th>
-                  <td> {this.state.institute.userId} </td>
+                    <th> User ID:</th>
+                    <td> {this.state.institute.userId} </td>
                   </tr>
                   <tr>
                     <th> Code:</th>

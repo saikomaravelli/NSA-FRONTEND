@@ -2,35 +2,31 @@ import { Component } from "react";
 import OfficerService from "../services/OfficerService";
 
 class viewOfficerAdminProfile extends Component {
-    constructor(props)
-    {
-        super(props);
-        this.state={
+  constructor(props) {
+    super(props);
+    this.state = {
 
-            state:this.props.match.params.state,
-            officer:''
+      state: this.props.match.params.state,
+      officer: ''
 
-        }
-         this.back=this.back.bind(this);
     }
+    this.back = this.back.bind(this);
+  }
 
-    componentDidMount()
-    {
-        OfficerService.getOfficerByState(this.state.state).then((res)=>
-        {
-            this.setState({officer:res.data})                             //fetches office admin data
-        });
-    }
+  componentDidMount() {
+    OfficerService.getOfficerByState(this.state.state).then((res) => {
+      this.setState({ officer: res.data })                             //fetches office admin data
+    });
+  }
 
-    back()
-    {
-        this.props.history.push(`/officerAdminPage/${this.state.state}`)
-    }
-    
-    render() { 
-        return (
-            <div>
-                     <div style={{ backgroundColor: '#F2FEFF' }} className="card col-md-6 offset-md-3 offset-md-3 p-3 mb-2 text-dark">
+  back() {
+    this.props.history.push(`/officerAdminPage/${this.state.state}`)
+  }
+
+  render() {
+    return (
+      <div>
+        <div style={{ backgroundColor: '#F2FEFF' }} className="card col-md-6 offset-md-3 offset-md-3 p-3 mb-2 text-dark">
           <h2 className="text-center">Your Profile:</h2>
 
           <br></br>
@@ -50,7 +46,7 @@ class viewOfficerAdminProfile extends Component {
                     <th> State:</th>
                     <td> {this.state.officer.state}</td>
                   </tr>
-                 
+
                 </tr>
               </thead>
             </table>
@@ -61,9 +57,9 @@ class viewOfficerAdminProfile extends Component {
             </div>
           </div>
         </div>
-            </div>
-        );
-    }
+      </div>
+    );
+  }
 }
- 
+
 export default ViewOfficerAdminProfile;

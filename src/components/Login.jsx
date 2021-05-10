@@ -19,70 +19,70 @@ class Login extends Component {
       choice: 'std',
 
     };
-    this.LoginUser= this.LoginUser.bind(this)
+    this.LoginUser = this.LoginUser.bind(this)
   }
 
-  checkEmpty = ()=>{
-    if(this.state.id.length === 0){
+  checkEmpty = () => {
+    if (this.state.id.length === 0) {
       alert("Id field cannot be empty");
       document.getElementById("id").focus();
       return false;
     }
-    else if(this.state.password.length === 0){
+    else if (this.state.password.length === 0) {
       alert("Password field cannot be empty");
       document.getElementById("password").focus();
       return false;
     }
     return true;
   }
-  
-  LoginUser(e)  {
+
+  LoginUser(e) {
     e.preventDefault();
     console.log("LoginUser")
-    if(this.checkEmpty()){
-    let logindetails = {
-      userId: this.state.id, password: this.state.password
-    }
-    LoginService.login(logindetails).then((res) => {
-      let loginsuccess = res.data
-      this.setState({ loginresult: loginsuccess });
-      
-      if (loginsuccess && loginsuccess.role === 'student' ) {
-        console.log("I'm in student")
-        this.props.history.push(`/StudentHomePage/${loginsuccess.userId}`);
+    if (this.checkEmpty()) {
+      let logindetails = {
+        userId: this.state.id, password: this.state.password
       }
-      else {
-        if (loginsuccess && loginsuccess.role === 'institution') {
-          console.log("I'm in institution")
-          this.props.history.push(`/instituteWelcomePage/${loginsuccess.userId}`);
+      LoginService.login(logindetails).then((res) => {
+        let loginsuccess = res.data
+        this.setState({ loginresult: loginsuccess });
+
+        if (loginsuccess && loginsuccess.role === 'student') {
+          console.log("I'm in student")
+          this.props.history.push(`/StudentHomePage/${loginsuccess.userId}`);
         }
         else {
-          if (loginsuccess && loginsuccess.role === 'officer') {
-            if (loginsuccess.userId ==='officeradmin') {
-              console.log("I'm in officeradmin")
-              this.props.history.push(`/OfficerAdminPage/${loginsuccess.state}`);
-              
-            } else {
-              console.log("I'm in officer")
-              this.props.history.push(`/officerwelcomepage/${loginsuccess.state}`);
+          if (loginsuccess && loginsuccess.role === 'institution') {
+            console.log("I'm in institution")
+            this.props.history.push(`/instituteWelcomePage/${loginsuccess.userId}`);
+          }
+          else {
+            if (loginsuccess && loginsuccess.role === 'officer') {
+              if (loginsuccess.userId === 'officeradmin') {
+                console.log("I'm in officeradmin")
+                this.props.history.push(`/OfficerAdminPage/${loginsuccess.state}`);
+
+              } else {
+                console.log("I'm in officer")
+                this.props.history.push(`/officerwelcomepage/${loginsuccess.state}`);
+
+              }
+            }
+            else {
+              if (loginsuccess && loginsuccess.role === 'ministry') {
+                console.log("I'm in minister")
+                this.props.history.push(`/MinistryWelcomePage/${loginsuccess.userId}`);
+              }
+              else {
+                alert("Invalid login credentials");
+              }
 
             }
           }
-          else {
-            if (loginsuccess && loginsuccess.role === 'ministry') {
-              console.log("I'm in minister")
-              this.props.history.push(`/MinistryWelcomePage/${loginsuccess.userId}`);
-            }
-            else {
-              alert("Invalid login credentials");
-            }
-            
-          }
         }
-      }
-    });
-    
-  }  
+      });
+
+    }
   }
 
   register = (event) => {
@@ -124,17 +124,17 @@ class Login extends Component {
 
                   <div className="form-group">
                     <label className="font-weight-bold">Id</label>
-                    <input type="text" placeholder="Id" className="form-control " id="id" name="id" value={this.state.id} onChange={this.changeIdHandler}  />
+                    <input type="text" placeholder="Id" className="form-control " id="id" name="id" value={this.state.id} onChange={this.changeIdHandler} />
                   </div>
                   <div className="form-group">
                     <label className="font-weight-bold">Password</label>
-                    <input type="password" placeholder="Password" className="form-control" id="password" name="password" value={this.state.password} onChange={this.changePasswordHandler}  />
+                    <input type="password" placeholder="Password" className="form-control" id="password" name="password" value={this.state.password} onChange={this.changePasswordHandler} />
                   </div>
 
                   <button className="btn btn-outline-primary btn btn-lg btn-block" type="submit" >Login</button>
 
 
-                  
+
 
                   <br></br>
                   <div className="form-group">

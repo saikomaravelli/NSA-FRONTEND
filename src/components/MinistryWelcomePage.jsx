@@ -5,25 +5,25 @@ class MinistryWelcomePage extends Component {
         super(props)
 
         this.state = {
-               userId: this.props.match.params.userId
+            userId: this.props.match.params.userId
         }
         this.grantScholarships = this.grantScholarships.bind(this);
-    this.ViewAllScholarships=this.ViewAllScholarships.bind(this);
-        
+        this.ViewAllScholarships = this.ViewAllScholarships.bind(this);
+
     }
 
-                                                                                             
 
-    grantScholarships(){
+
+    grantScholarships() {
         this.props.history.push(`/grantScholarships/${this.state.userId}`);
     }
-    ViewAllScholarships(){
+    ViewAllScholarships() {
         this.props.history.push(`/viewAllScholarships/${this.state.userId}`);
     }
-   logout = ()=>{
-       this.props.history.push('/login');
-   }
-   
+    logout = () => {
+        this.props.history.push('/login');
+    }
+
     render() {
         return (
             <div>
@@ -41,15 +41,15 @@ class MinistryWelcomePage extends Component {
                          </button>
                         <br></br>
                         <button className="btn btn-outline-primary mr-5" onClick={this.ViewAllScholarships} >
-                             View All Scholarships
+                            View All Scholarships
                         </button>
                         <br></br>
-                        
+
                     </div>
                 </div>
             </div>
         );
     }
 }
- 
+
 export default MinistryWelcomePage;

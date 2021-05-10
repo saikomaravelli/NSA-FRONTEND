@@ -15,27 +15,27 @@ class InstituteWelcomePageComponent extends Component {
         this.viewApprovalStatus = this.viewApprovalStatus.bind(this);
     }
 
-    componentDidMount() {                   
-        InstituteService.statusUpdate(this.state.userId).then((resp) => {       
+    componentDidMount() {
+        InstituteService.statusUpdate(this.state.userId).then((resp) => {
             this.setState({ institute: resp.data });
         });
     }
 
     logout = (e) => {                                       // redirects to the login page
         console.log("in logout");
-        
+
         this.props.history.push("/login");
     }
     viewProfile() {                                                                     // the user is redirected to the viewInstituteprofile page
         this.props.history.push(`/viewInstituteProfile/${this.state.institute.code}`);
     }
-    changeInstitutePassword = ()=>{                                                     // the user is redirected to the changeInstitutePassword page
+    changeInstitutePassword = () => {                                                     // the user is redirected to the changeInstitutePassword page
         this.props.history.push(`/changeInstitutePassword/${this.state.institute.code}`)
     }
-    updateProfile(){
+    updateProfile() {
         this.props.history.push(`/instituteRegistration/${this.state.institute.userId}`)
     }
-    viewApprovalStatus(){
+    viewApprovalStatus() {
         this.props.history.push(`/viewInstituteStatus/${this.state.institute.userId}`);
     }
     render() {
@@ -53,7 +53,7 @@ class InstituteWelcomePageComponent extends Component {
                         <button className="btn btn-outline-primary mr-5" onClick={this.viewProfile}>
                             View my Profile
                          </button>
-                         <br></br>
+                        <br></br>
                         <button className="btn btn-outline-primary mr-5" onClick={this.changeInstitutePassword} >
                             Change Password
                         </button>
