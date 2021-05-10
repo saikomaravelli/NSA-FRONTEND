@@ -95,7 +95,7 @@ class ChangeInstitutePassword extends Component {
                             <br />
                             <tr>
                                 <td><label htmlFor="oldPassword">CURRENT PASSWORD</label></td>
-                                <td><input type="password" id="oldPassword" placeholder="Enter your current password" className="form-control" onChange={this.changeOldPasswordHandler} value={this.state.oldPassword} /></td>
+                                <td><input type="password" id="oldPassword" placeholder="Enter current password" className="form-control" onChange={this.changeOldPasswordHandler} value={this.state.oldPassword} /></td>
                             </tr>
                             <tr>
                                 <td></td>
