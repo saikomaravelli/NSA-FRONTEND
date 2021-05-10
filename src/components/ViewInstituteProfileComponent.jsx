@@ -21,7 +21,7 @@ class ViewInstituteProfile extends Component {
   render() {
     return (
       <div>
-        <div style={{ backgroundColor: '#F2FEFF' }} className="card col-md-5 offset-md-3 p-3 mb-2 text-dark">
+        <div style={{ backgroundColor: '#F2FEFF' }} className="card col-md-5 offset-md-3 p-3 ">       {/*mb-2 text-dark */}
           <h2 className="text-center">My Profile:</h2>
 
           <br></br>

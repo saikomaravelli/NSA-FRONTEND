@@ -253,7 +253,7 @@ class InstituteRegistrationComponent extends Component {
                                             <td>
                                                 <div className="input-group">
                                                     {this.state.pvalue === '_add' ?
-                                                        (<input type="text" title="this is title" placeholder="Enter new user Id" id="userId" className="form-control" onChange={this.changeUserIdHandler} value={this.state.userId} />)
+                                                        (<input type="text" title="this is userId" placeholder="Enter new user Id" id="userId" className="form-control" onChange={this.changeUserIdHandler} value={this.state.userId} />)
                                                         : (<input type="text" value={this.state.userId} className="form-control" readOnly />)}
                                                 </div>
                                             </td>
@@ -302,7 +302,7 @@ class InstituteRegistrationComponent extends Component {
                                             <td>{this.state.pvalue === '_add' ?
                                                 (<label>Institution Code:</label>) : null}</td>
                                             <td>{this.state.pvalue === '_add' ?
-                                                <input type="tel" pattern="[0-9]{4}" id="code" title="Please enter a four digit institute code" className="form-control" onChange={this.changeCodeHandler} value={this.state.code} />
+                                                <input type="tel" pattern="[0-9]{4}" id="code" placeholder="enter your institution code" title="Please enter a four digit institute code" className="form-control" onChange={this.changeCodeHandler} value={this.state.code} />
                                                 : null}
                                             </td>
                                         </tr>
@@ -353,7 +353,7 @@ class InstituteRegistrationComponent extends Component {
                                             <td>{this.state.pvalue === '_add' ?
                                                 <label>Address:</label> : null}</td>
                                             <td>{this.state.pvalue === '_add' ?
-                                                <textarea rows="5" cols="20" id="address" className="form-control" onChange={this.changeAddressHandler} value={this.state.address}></textarea>
+                                                <textarea rows="5" cols="20" id="address" placeholder="Enter the institution address" className="form-control" onChange={this.changeAddressHandler} value={this.state.address}></textarea>
                                                 : null}
                                             </td>
                                         </tr>
@@ -415,7 +415,7 @@ class InstituteRegistrationComponent extends Component {
 
                                         <tr>
                                             <td>Telephone:</td>
-                                            <td><input type="tel" pattern="[6-9]{1}[0-9]{9}" id="telephone" className="form-control" onChange={this.changeTelephoneHandler} value={this.state.telephone} /></td>
+                                            <td><input type="tel" pattern="[6-9]{1}[0-9]{9}" id="telephone" placeholder="Enter your institute phone no" className="form-control" onChange={this.changeTelephoneHandler} value={this.state.telephone} /></td>
                                         </tr>
                                         <tr>
                                             <td>Principal:</td>
