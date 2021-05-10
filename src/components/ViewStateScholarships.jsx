@@ -20,7 +20,7 @@ class ViewStateScholarships extends Component {
     {
         OfficerService.viewScholarshipByState(this.state.state).then(res=>
             {
-                this.setState({scholarshipList:res.data},()=>console.log(this.state.scholarshipList))
+                this.setState({scholarshipList:res.data},()=>console.log(this.state.scholarshipList))           //fetches scholarship data
             });
 
     }

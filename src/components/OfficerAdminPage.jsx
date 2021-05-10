@@ -25,13 +25,13 @@ class OfficerAdminPage extends Component {
     {
         OfficerService.getOfficerByState(this.state.state).then(res=>
             {
-                this.setState({officer:res.data})
+                this.setState({officer:res.data})                       
             });
     }
 
     viewOfficerProfile()
     {
-        this.props.history.push(`/viewOfficerProfile/${this.state.state}`)
+        this.props.history.push(`/viewOfficerProfile/${this.state.state}`)      //directs to profile page
     }
 
     updateofficer()

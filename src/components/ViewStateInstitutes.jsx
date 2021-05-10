@@ -15,7 +15,7 @@ class ViewStateInstitutes extends Component {
         this.back=this.back.bind(this);
     }
 
-    componentDidMount()
+    componentDidMount()                         
     {
         OfficerService.viewInstitutesByState(this.state.state).then(res=>
             {
@@ -24,7 +24,7 @@ class ViewStateInstitutes extends Component {
 
     }
 
-    back()
+    back()                                                                          //redirects back to homepage
     {
         this.props.history.push(`/officerWelcomePage/${this.state.state}`)
     }
