@@ -11,11 +11,11 @@ class ViewInstituteProfile extends Component {
         
     }
     componentDidMount(){
-        InstituteService.getInstitute(this.state.instituteCode).then(resp =>{
+        InstituteService.getInstitute(this.state.instituteCode).then(resp =>{   //here institute details are fetched
             this.setState({institute:resp.data});
         });
     }
-    back = ()=>{
+    back = ()=>{                                                                          //redirects back to home page
         this.props.history.push(`/instituteWelcomePage/${this.state.institute.userId}`);
     }
     render() { 

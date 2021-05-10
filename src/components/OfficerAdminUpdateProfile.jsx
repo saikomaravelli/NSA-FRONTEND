@@ -32,7 +32,7 @@ class OfficerAdminUpdateProfile extends Component {
         });
     }
 
-    changePasswordHandler= (event) => {
+    changePasswordHandler= (event) => {                     //displays messsage based on password length
         this.setState({password: event.target.value});
         if(!event.target.value)
         {

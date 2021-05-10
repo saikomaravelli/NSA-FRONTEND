@@ -18,7 +18,7 @@ class viewOfficerAdminProfile extends Component {
     {
         OfficerService.getOfficerByState(this.state.state).then((res)=>
         {
-            this.setState({officer:res.data})
+            this.setState({officer:res.data})                             //fetches office admin data
         });
     }
 

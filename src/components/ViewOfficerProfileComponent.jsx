@@ -24,11 +24,11 @@ class ViewOfficerProfileComponent extends Component {
 
     back()
     {
-      if(this.state.state=='all')
+      if(this.state.state=='all')                                         //redirects to officeradmin home page
       {
         this.props.history.push(`/officerAdminPage/${this.state.state}`) 
       }
-      else
+      else                                                                //redirects back to  officer page
       {
         this.props.history.push(`/officerWelcomePage/${this.state.state}`)
       }

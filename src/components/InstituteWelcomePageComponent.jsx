@@ -10,26 +10,26 @@ class InstituteWelcomePageComponent extends Component {
             //  userId: 'I2',
             institute: ''
         }
-        this.viewProfile = this.viewProfile.bind(this);
+        this.viewProfile = this.viewProfile.bind(this);                             //here methods are binded with this
         this.updateProfile = this.updateProfile.bind(this);
         this.viewApprovalStatus = this.viewApprovalStatus.bind(this);
     }
 
-    componentDidMount() {
-        InstituteService.statusUpdate(this.state.userId).then((resp) => {
+    componentDidMount() {                   
+        InstituteService.statusUpdate(this.state.userId).then((resp) => {       
             this.setState({ institute: resp.data });
         });
     }
 
-    logout = (e) => {
+    logout = (e) => {                                       // redirects to the login page
         console.log("in logout");
-        this.setState({userId:''});
+        
         this.props.history.push("/login");
     }
-    viewProfile() {
+    viewProfile() {                                                                     // the user is redirected to the viewInstituteprofile page
         this.props.history.push(`/viewInstituteProfile/${this.state.institute.code}`);
     }
-    changeInstitutePassword = ()=>{
+    changeInstitutePassword = ()=>{                                                     // the user is redirected to the changeInstitutePassword page
         this.props.history.push(`/changeInstitutePassword/${this.state.institute.code}`)
     }
     updateProfile(){

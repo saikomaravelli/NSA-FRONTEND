@@ -50,7 +50,7 @@ class OfficerAdminPage extends Component {
 
     logout()
     {
-        this.props.history.push('/login')
+        this.props.history.push('/login')               //redirects to login page
     }
 
     render() {

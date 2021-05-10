@@ -21,7 +21,7 @@ class ChangeOfficerPassword  extends Component {
             this.setState({officer:resp.data},()=>this.state.officer);
         });
     }
-    checkEmpty = ()=>{
+    checkEmpty = ()=>{                                          //checks whether the fields are empty or not
         if(this.state.oldPassword.length === 0){
             alert("old password cannot be empty ");
             document.getElementById("oldPassword").focus();
@@ -39,7 +39,7 @@ class ChangeOfficerPassword  extends Component {
         }
         return true;
     }
-    comparePassword = ()=>{
+    comparePassword = ()=>{                                             //compares whether both passwords are same or not
             if(this.state.newPassword !== this.state.confirmNewPassword){
                 alert("New password and confirm new password does not match");
                 this.setState({confirmNewPassword:''});
@@ -47,7 +47,7 @@ class ChangeOfficerPassword  extends Component {
             }
             return true;
     }
-    changePassword = (e)=>{
+    changePassword = (e)=>{                                             //saves data into database
         e.preventDefault();
 
         if(this.checkEmpty() && this.comparePassword()){

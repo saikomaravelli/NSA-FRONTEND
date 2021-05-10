@@ -20,7 +20,7 @@ class ChangeInstitutePassword extends Component {
             this.setState({ institute: resp.data }, () => this.state.institute);
         });
     }
-    checkEmpty = () => {
+    checkEmpty = () => {                                        //this method checks whether all the input fields are empty or not
         if (this.state.oldPassword.length === 0) {
             alert("Current password cannot be empty ");
             document.getElementById("oldPassword").focus();
@@ -38,7 +38,7 @@ class ChangeInstitutePassword extends Component {
         }
         return true;
     }
-    comparePassword = () => {
+    comparePassword = () => {                                           //this methods compares whether new password and confirm new password entered by user matches or not
         if (this.state.newPassword !== this.state.confirmNewPassword) {
             alert("New password and confirm new password does not match");
             this.setState({ confirmNewPassword: '' });
@@ -46,7 +46,7 @@ class ChangeInstitutePassword extends Component {
         }
         return true;
     }
-    changePassword = (e) => {
+    changePassword = (e) => {                                   //this methods saves the new password in the database
         e.preventDefault();
 
         if (this.checkEmpty() && this.comparePassword()) {
@@ -76,7 +76,7 @@ class ChangeInstitutePassword extends Component {
     changeConfirmNewPasswordHandler(event) {
         this.setState({ confirmNewPassword: event.target.value });
     }
-    showPassword = (s) => {
+    showPassword = (s) => {                         //this method is used to display password in text format to the user
         let f = document.getElementById(s);
         if (f.type === "password") {
             f.type = "text"

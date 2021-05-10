@@ -22,7 +22,7 @@ class OfficerRegistrationComponent extends Component {
             
 
         }
-        this.saveOrUpdateOfficer=this.saveOrUpdateOfficer.bind(this);
+        this.saveOfficer=this.saveOfficer.bind(this);
         this.cancel=this.cancel.bind(this);
 
     }
@@ -52,7 +52,7 @@ class OfficerRegistrationComponent extends Component {
         
     }
 
-    changePasswordHandler= (event) => {
+    changePasswordHandler= (event) => {                 //displays different messages based on password length
         this.setState({password: event.target.value});
         if(!event.target.value)
         {
@@ -90,7 +90,7 @@ class OfficerRegistrationComponent extends Component {
         
     }
 
-    fieldsCheck=()=>
+    fieldsCheck=()=>                                    //checks fields are empty or not
     {
         if(this.state.userId.length===0)
         {
@@ -121,7 +121,7 @@ class OfficerRegistrationComponent extends Component {
     }
 
 
-    saveOrUpdateOfficer=(e) =>
+    saveOfficer=(e) =>
     {
             e.preventDefault();
 
@@ -204,7 +204,7 @@ class OfficerRegistrationComponent extends Component {
                         </div>
                         <div className="card-body col-md-offset-1">
 
-                            <form onSubmit={this.saveOrUpdateOfficer}>
+                            <form onSubmit={this.saveOfficer}>
                                 <table>
                                     <tbody>
                                         <tr>

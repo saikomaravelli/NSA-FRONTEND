@@ -26,7 +26,7 @@ class ReviewInstituteByOfficer extends Component {
 
     back()
     {
-        this.props.history.push(`/officerWelcomePage/${this.state.state}`)
+        this.props.history.push(`/officerWelcomePage/${this.state.state}`)      //redirects back to homepage
     }
     
     render() { 

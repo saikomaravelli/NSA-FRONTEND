@@ -63,7 +63,7 @@ class OfficerWelcomePage extends Component {
 
     
 
-    logout()
+    logout()                                //this method redirects to home page
     {
         this.props.history.push('/login')
     }

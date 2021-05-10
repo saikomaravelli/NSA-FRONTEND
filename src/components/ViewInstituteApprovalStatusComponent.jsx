@@ -11,7 +11,7 @@ class ViewInstituteApprovalStatus extends Component {
     }
   }
   componentDidMount() {
-    InstituteService.statusUpdate(this.state.userId).then((resp) => {
+    InstituteService.statusUpdate(this.state.userId).then((resp) => {       //here institute details after loaded after component mounted
       let institute = resp.data
       this.setState({
         institute: institute,
@@ -19,7 +19,7 @@ class ViewInstituteApprovalStatus extends Component {
       })
     });
   }
-  back = () => {
+  back = () => {                                //this url redirects back to instiute home page
     this.props.history.push(`/instituteWelcomePage/${this.state.institute.userId}`);
   }
   render() {
@@ -31,7 +31,7 @@ class ViewInstituteApprovalStatus extends Component {
           <td>{this.state.approvalMessage === 'Pending'?(<h2 className="text-center" style={{ color: 'orange' }}>Your institution status is {this.state.approvalMessage}</h2>):
             (<h2 className="text-center" style={{ color: 'green' }}>Your institution status is {this.state.approvalMessage}</h2>)}
             </td>
-          {/* <td><button >X</button></td> */}
+          
           </tr>
           </table>
         </div>

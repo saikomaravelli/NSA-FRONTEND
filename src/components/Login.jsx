@@ -21,11 +21,25 @@ class Login extends Component {
     };
     this.LoginUser= this.LoginUser.bind(this)
   }
+
+  checkEmpty = ()=>{
+    if(this.state.id.length === 0){
+      alert("Id field cannot be empty");
+      document.getElementById("id").focus();
+      return false;
+    }
+    else if(this.state.password.length === 0){
+      alert("Password field cannot be empty");
+      document.getElementById("password").focus();
+      return false;
+    }
+    return true;
+  }
   
   LoginUser(e)  {
     e.preventDefault();
     console.log("LoginUser")
-    
+    if(this.checkEmpty()){
     let logindetails = {
       userId: this.state.id, password: this.state.password
     }
@@ -68,7 +82,7 @@ class Login extends Component {
       }
     });
     
-     
+  }  
   }
 
   register = (event) => {
@@ -110,11 +124,11 @@ class Login extends Component {
 
                   <div className="form-group">
                     <label className="font-weight-bold">Id</label>
-                    <input type="text" placeholder="Id" className="form-control " name="id" value={this.state.id} onChange={this.changeIdHandler} required />
+                    <input type="text" placeholder="Id" className="form-control " id="id" name="id" value={this.state.id} onChange={this.changeIdHandler}  />
                   </div>
                   <div className="form-group">
                     <label className="font-weight-bold">Password</label>
-                    <input type="password" placeholder="Password" className="form-control" name="password" value={this.state.password} onChange={this.changePasswordHandler} required />
+                    <input type="password" placeholder="Password" className="form-control" id="password" name="password" value={this.state.password} onChange={this.changePasswordHandler}  />
                   </div>
 
                   <button className="btn btn-outline-primary btn btn-lg btn-block" type="submit" >Login</button>

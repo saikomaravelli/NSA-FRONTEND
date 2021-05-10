@@ -20,7 +20,7 @@ class ReviewScholarshipByOfficer extends Component {
     {
         OfficerService.reviewScholarship(this.state.name,this.state.state).then(res=>
             {
-                this.setState({scholarshipList:res.data},()=>console.log(this.state.scholarshipList))
+                this.setState({scholarshipList:res.data},()=>console.log(this.state.scholarshipList))       //fetches scholarship data
             });
 
     }

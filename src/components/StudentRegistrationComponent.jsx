@@ -54,7 +54,7 @@ class StudentRegistrationComponent extends Component {
         }
         else if(this.state.confirmPassword.length === 0){
              alert("confirm password field cannot be empty");
-             document.getElementById("confirmpassword").focus();
+            //  document.getElementById("confirmpassword").focus();
              return false;
          }
         else if(this.state.studentId.length === 0){
@@ -88,7 +88,7 @@ class StudentRegistrationComponent extends Component {
             return false;
         }
         else if(this.state.address.length === 0){
-            alert("length field cannot be empty");
+            alert("address field cannot be empty");
             document.getElementById("address").focus();
             return false;
         }
@@ -161,6 +161,15 @@ class StudentRegistrationComponent extends Component {
     changeAadharHandler = (event) => {
         this.setState({ aadhar: event.target.value });
     }
+    showPassword = (s)=>{
+        let f = document.getElementById(s);
+        if(f.type === "password"){
+            f.type="text"
+        }
+        else{
+            f.type="password"
+        }
+    }
     render() {
         return (
             <div className="container">
@@ -187,6 +196,9 @@ class StudentRegistrationComponent extends Component {
                                                 {this.state.displayMessage ==="strong password"?(<div style={{color:"green"}}>{this.state.displayMessage}</div>):null}
                                             </td>
                                         </tr>
+                                        <tr>
+                                <td></td>
+                            <td><input type="checkbox" onClick={()=>this.showPassword("password")}/>show Password</td></tr>
                                         <tr>
                                             <td>Confirm Password:</td>
                                             <td>
@@ -226,7 +238,7 @@ class StudentRegistrationComponent extends Component {
                                         </tr>
                                         <tr>
                                             <td>Email:</td>
-                                            <td><input type="email" id="email" placeholder="Enter email" className="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Must be in format abc@gmail.com" onChange={this.changeEmailHandler}></input></td>
+                                            <td><input type="text" id="email" placeholder="Enter email" className="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Must be in format abc@gmail.com" onChange={this.changeEmailHandler}></input></td>
                                         </tr>
 
                                         <tr>
