@@ -159,7 +159,7 @@ class InstituteRegistrationComponent extends Component {
             return false;
         }
         else if (this.state.telephone.length === 0) {
-            alert("telephone field cannot be empty");
+            alert("phone field cannot be empty");
             document.getElementById("telephone").focus();
             return false;
         }
@@ -414,8 +414,8 @@ class InstituteRegistrationComponent extends Component {
                                         </tr>
 
                                         <tr>
-                                            <td>Telephone:</td>
-                                            <td><input type="tel" pattern="[6-9]{1}[0-9]{9}" id="telephone" placeholder="Enter your institute phone no" className="form-control" onChange={this.changeTelephoneHandler} value={this.state.telephone} /></td>
+                                            <td>phone:</td>
+                                            <td><input type="tel" pattern="[6-9]{1}[0-9]{9}" id="telephone" title="please enter 10 digit phone number" placeholder="Enter your institute phone no" className="form-control" onChange={this.changeTelephoneHandler} value={this.state.telephone} /></td>
                                         </tr>
                                         <tr>
                                             <td>Principal:</td>
