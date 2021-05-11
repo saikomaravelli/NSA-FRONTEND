@@ -33,10 +33,7 @@ class ViewInstituteProfile extends Component {
                     <th> User ID:</th>
                     <td> {this.state.institute.userId} </td>
                   </tr>
-                  {/* <tr>
-                        <th> Password:</th>
-                        <td> {this.state.institute.password} </td>
-                      </tr> */}
+                  
                   <tr>
                     <th> Code:</th>
                     <td> {this.state.institute.code} </td>
