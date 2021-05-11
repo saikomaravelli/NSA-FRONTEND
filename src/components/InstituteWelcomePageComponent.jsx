@@ -7,7 +7,7 @@ class InstituteWelcomePageComponent extends Component {
 
         this.state = {
             userId: this.props.match.params.userId,
-            //  userId: 'I2',
+            
             institute: ''
         }
         this.viewProfile = this.viewProfile.bind(this);                             //here methods are binded with this
