@@ -23,7 +23,6 @@ class InstituteWelcomePageComponent extends Component {
 
     logout = (e) => {                                       // redirects to the login page
         console.log("in logout");
-
         this.props.history.push("/login");
     }
     viewProfile() {                                                                     // the user is redirected to the viewInstituteprofile page
